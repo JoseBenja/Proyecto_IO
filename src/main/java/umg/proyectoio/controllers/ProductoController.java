@@ -17,6 +17,11 @@ public class ProductoController {
     @Autowired
     private ProductoDao productoDao;
 
+    @RequestMapping(value = "api/agregarProducto", method = RequestMethod.POST)
+    public void agregarProducto(@RequestBody Producto producto){
+        productoDao.agregarProducto(producto);
+    }
+
     //Consume el API de menuTienda.js que se encarga de listar los productos activos existentes
     @RequestMapping(value = "api/listarProducto", method = RequestMethod.POST)
     public List<Producto> listaProducto(@RequestBody Producto producto){

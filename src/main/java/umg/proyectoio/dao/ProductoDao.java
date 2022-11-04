@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ProductoDao {
 
+    void agregarProducto(Producto producto);
+
     void agregarShopList(ShopList shopList);
 
     List<Producto> obtenerBusqueda(Producto producto);

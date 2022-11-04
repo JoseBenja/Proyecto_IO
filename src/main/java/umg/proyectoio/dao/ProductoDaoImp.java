@@ -17,6 +17,11 @@ public class ProductoDaoImp implements ProductoDao{
     EntityManager entityManager;
 
     @Override
+    public void agregarProducto(Producto producto) {
+        entityManager.merge(producto);
+    }
+
+    @Override
     public void agregarShopList(ShopList shopList) {
         entityManager.merge(shopList);
     }

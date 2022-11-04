@@ -24,7 +24,7 @@ async function busquedaProducto() {
         let resultadoHtml = '<tr><td>' + resultado.nombreProducto
             + '</td><td>' + resultado.descProducto
             + '</td><td> Q ' + resultado.precioProducto
-            + '</td><td> <a class="btn btn-lg btn-block btn btn-success" onclick="agregarShopList(`Tv LG`,`13999`)">Agregar al carrito</a>';
+            + '</td><td> <a class="btn btn-lg btn-block btn btn-success" onclick="agregarShopList()">Agregar al carrito</a>';
 
         resultadoBusquedaHtml += resultadoHtml;
     }

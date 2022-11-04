@@ -10,37 +10,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Tienda</title>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="menuAdmin.html">Menu</a>
     <a class="navbar-brand" href="index.html">Cerrar Sesion</a>
 </nav>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="ventasTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Repartidor</th>
+                    <th>NIT</th>
+                    <th>Codigo de Pedido</th>
+                    <th>Direccion</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
+                </thead>
+                <tbody>
 
-<form class="container align-items-start my-5">
-    <div class="card o-hidden border-0 shadow-lg my-3 container">
-        <div class="text-center card-title">
-            <h2 class="my-0 font-weight-normal">Nuevo Producto</h2>
+                </tbody>
+            </table>
         </div>
-        <div class="form-group row my-2">
-            <div class="col-sm-9">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="txtNombre" maxlength="30">
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label">Precio</label>
-                <input type="number" class="form-control" id="txtPrecio" placeholder="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="form-label">Descripcion</label>
-            <input type="text" class="form-control" id="txtDescripcion" maxlength="100">
-        </div>
-        <a onclick="agregarProducto()" class="btn btn-primary btn-user btn-block">Agregar</a>
     </div>
-</form>
+</div>
 
-<!-- nuevoProducto-->
-<script src="js/nuevoProducto.js"></script>
+<script src="js/menuVentasAdmin.js"></script>
 </body>
 </html>
