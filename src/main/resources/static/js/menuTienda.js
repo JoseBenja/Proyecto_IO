@@ -21,17 +21,16 @@ async function busquedaProducto() {
 
     for (let resultado of resultadoBusqueda) {
         //Tabla
-        let resultadoHtml = '<tr><td>' + resultado.nombreProducto
-            + '</td><td>' + resultado.descProducto
-            + '</td><td> Q ' + resultado.precioProducto
-            + '</td><td> <a class="btn btn-lg btn-block btn btn-success" onclick="agregarShopList()">Agregar al carrito</a>';
+        let resultadoHtml = `<tr><td>` + resultado.nombreProducto
+            + `</td><td>` + resultado.descProducto
+            + `</td><td> Q ` + resultado.precioProducto
+            + `</td><td> <a class="btn btn-lg btn-block btn btn-success" onclick="agregarShopList('` + resultado.nombreProducto + `','` +  resultado.precioProducto + `')">Agregar al carrito</a>`;
 
         resultadoBusquedaHtml += resultadoHtml;
     }
 
     document.querySelector("#tiendaTable tbody").outerHTML = resultadoBusquedaHtml;
 }
-
 
 async function agregarShopList(nombreProd, precioProd) {
     let datos2 = {};
@@ -40,7 +39,6 @@ async function agregarShopList(nombreProd, precioProd) {
     datos2.precioProducto = precioProd;
     datos2.estadoShoplist = true;
 
-    console.log('datos ', datos2);
     await fetch('api/agregarShopList', {
         method: 'POST',
         headers: {
@@ -51,6 +49,3 @@ async function agregarShopList(nombreProd, precioProd) {
     });
     alert('Producto agregado a la ShopList');
 }
-
-
-

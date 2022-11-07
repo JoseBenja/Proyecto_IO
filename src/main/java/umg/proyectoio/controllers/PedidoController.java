@@ -26,6 +26,11 @@ public class PedidoController {
         return pedidoDao.obtenerBusqueda(pedido);
     }
 
+    @RequestMapping(value = "api/pedidoEspecificoRuta", method = RequestMethod.POST)
+    public List<Pedido> pedidoEspecificoRuta(@RequestBody Pedido pedido){
+        return pedidoDao.obtenerpedidoEspecificoRuta(pedido);
+    }
+
     /*public void Solver(String[] args) {
         double a = Double.parseDouble(args[0]);
         double b = Double.parseDouble(args[1]);

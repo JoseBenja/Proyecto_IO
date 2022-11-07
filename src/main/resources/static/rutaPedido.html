@@ -1,24 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href="css/rutaPedido.css" rel="stylesheet">
-    <title>Tienda</title>
+    <meta charset="utf-8" />
+    <title>Distances btn two cities App</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="css/rutaPedido.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div id="googleMap" style="width: 100%; height: 100%; border: 1px groove #000000;"></div>
-    <div id="output"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="menuRepartidor.html">Menu</a>
+    <a class="navbar-brand" href="index.html" onclick="removerHeader()">Cerrar Sesion</a>
+</nav>
 
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsBvw9e5eykzJUTTOIkBKNkzP9buRHUwc&libraries=places&callback=initMap">
-    </script>
-    <script src="js/rutaPedido.js"></script>
+<div class="jumbotron">
+    <div class="container-fluid">
+        <h1>Ruta disponible</h1>
+        <p>Cambiar lugar de salida</p>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <a class="btn btn-info btn-lg" href="menuRepartidor.html">Regresar al menu</a>
+                <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
+                <div class="col-xs-4">
+                    <input type="text" id="from" placeholder="Origin" class="form-control">
+                </div>
+            </div>
+        </form>
+
+        <div class="col-xs-offset-2 col-xs-10">
+            <button class="btn btn-info btn-lg " onclick="calcRoute();"><i class="fas fa-map-signs"></i></button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div id="googleMap">
+
+        </div>
+        <div id="output">
+
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsBvw9e5eykzJUTTOIkBKNkzP9buRHUwc&libraries=places"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/rutaPedido.js"></script>
+<script src="js/removerHeader.js"></script>
 </body>
 </html>

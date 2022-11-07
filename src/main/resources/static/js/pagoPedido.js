@@ -18,6 +18,7 @@ async function pagoPedido() {
     datos.dirPedido = document.getElementById('txtDireccion').value;
     datos.nombreRepartidor = resultadoBusqueda.nombreRep;
     datos.nitClientePedido = document.getElementById('txtNIT').value;
+    datos.dirPedidoEspecifico = document.getElementById("txtDirEspecifica").value;
     datos.correoClientePedido = document.getElementById('txtEmail').value;
     datos.estadoPedido = true;
 

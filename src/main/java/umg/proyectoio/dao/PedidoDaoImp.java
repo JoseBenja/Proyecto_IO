@@ -21,6 +21,12 @@ public class PedidoDaoImp implements PedidoDao{
     }
 
     @Override
+    public List<Pedido> obtenerpedidoEspecificoRuta(Pedido pedido) {
+        String query = "FROM Pedido WHERE id_ped=" + pedido.getIdPedido() + " AND estado_ped=" + pedido.isEstadoPedido();
+        return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
     public void agregarPedido(Pedido pedido) {
         entityManager.merge(pedido);
     }

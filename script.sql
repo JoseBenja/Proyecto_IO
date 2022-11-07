@@ -34,6 +34,7 @@ CREATE TABLE detalle_pedido (
                                 id_ped serial primary key,
                                 nom_rep varchar(100),
                                 dir_ped varchar(100),
+                                dir_esp_ped varchar(150),
                                 nit_cliente_ped varchar(20),
                                 correo_cliente_ped varchar(100),
                                 estado_ped boolean

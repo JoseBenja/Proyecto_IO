@@ -1,6 +1,14 @@
 $(document).ready(function() {
-    busquedaSolicitud();
+    verificarToken();
 });
+
+function verificarToken() {
+    if (localStorage.token == null) {
+        window.location.href = '401.html'
+    } else {
+        busquedaSolicitud();
+    }
+}
 
 async function busquedaSolicitud() {
     let datos = {};
@@ -23,14 +31,17 @@ async function busquedaSolicitud() {
         //Tabla
         let resultadoHtml = '<tr><td>' + resultado.nitClientePedido
             + '</td><td>' + resultado.idPedido
-            + '</td><td>' + resultado.dirPedido
+            + '</td><td> <a class="btn btn-info btn-lg" href="rutaPedido.html" onclick="localIdPed(`' + resultado.idPedido + '`)">Ver Ruta</a>'
             + '</td><td>' + resultado.estadoPedido;
-
         resultadoBusquedaHtml += resultadoHtml;
     }
 
     document.querySelector("#entregasTable tbody").outerHTML = resultadoBusquedaHtml;
 }
 
+
+async function localIdPed(idPed) {
+    localStorage.idPedido = idPed;
+}
 
 

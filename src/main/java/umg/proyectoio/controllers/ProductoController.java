@@ -39,4 +39,9 @@ public class ProductoController {
     public List<ShopList> listarShopList(@RequestBody ShopList shopList){
         return productoDao.obtenerShopList(shopList);
     }
+
+    @RequestMapping(value = "api/eliminarShopList", method = RequestMethod.POST)
+    public void eliminarShopList(@RequestBody ShopList shopList){
+        productoDao.eliminarShopList(shopList);
+    }
 }

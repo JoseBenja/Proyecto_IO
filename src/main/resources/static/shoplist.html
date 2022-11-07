@@ -13,7 +13,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Productos</a>
+    <a class="navbar-brand" href="menuTienda.html">Productos</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,10 +24,7 @@
                 <a class="nav-link" href="shoplist.html">Shoplist<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sesion</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Cerrar sesion</a>
+                <a class="nav-link" href="index.html" onclick="removerHeader()">Cerrar sesion</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -58,6 +55,7 @@
                 <tr>
                     <th>Nombre del producto</th>
                     <th>Precio</th>
+                    <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,8 +67,6 @@
 </div>
 
 <script src="js/shoplist.js"></script>
+<script src="js/removerHeader.js"></script>
 </body>
-<footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">Tienda Tomorrowland</p>
-</footer>
 </html>

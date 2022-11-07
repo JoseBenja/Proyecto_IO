@@ -19,6 +19,9 @@ public class Pedido {
     @Getter @Setter @Column(name = "dir_ped")
     private String dirPedido;
 
+    @Getter @Setter @Column(name = "dir_esp_ped")
+    private String dirPedidoEspecifico;
+
     @Getter @Setter @Column(name = "nit_cliente_ped")
     private String nitClientePedido;
 

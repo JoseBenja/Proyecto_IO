@@ -11,6 +11,8 @@ public interface ProductoDao {
 
     void agregarShopList(ShopList shopList);
 
+    void eliminarShopList(ShopList shopList);
+
     List<Producto> obtenerBusqueda(Producto producto);
 
     List<ShopList> obtenerShopList(ShopList shopList);

@@ -37,4 +37,9 @@ public class ProductoDaoImp implements ProductoDao{
         String query = "FROM ShopList WHERE estado_shoplist=" + shopList.isEstadoShoplist();
         return entityManager.createQuery(query).getResultList();
     }
+
+    @Override
+    public void eliminarShopList(ShopList shopList) {
+        entityManager.remove(entityManager.contains(shopList) ? shopList: entityManager.merge(shopList));
+    }
 }
