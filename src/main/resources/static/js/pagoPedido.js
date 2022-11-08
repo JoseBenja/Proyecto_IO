@@ -13,7 +13,6 @@ async function pagoPedido() {
             'Content-Type': 'application/json'
         },
     });
-
     let resultadoBusqueda = await request.json()
 
     datos.dirPedido = document.getElementById('txtDireccion').value;
@@ -21,7 +20,7 @@ async function pagoPedido() {
     datos.nitClientePedido = document.getElementById('txtNIT').value;
     datos.dirPedidoEspecifico = document.getElementById("txtDirEspecifica").value;
     datos.correoClientePedido = document.getElementById('txtEmail').value;
-    datos.fechaPedido = fechaPed.toISOString().split('T')[0];;
+    datos.fechaPedido = fechaPed.toISOString().split('T')[0];
     datos.estadoPedido = true;
     datos.cantidadPedido = parseInt(localStorage.prodComprados);
 
@@ -35,5 +34,5 @@ async function pagoPedido() {
     });
 
     alert('Compra realizada con exito')
-    window.location.href = 'shoplist.html';
+    window.location.href = 'menuTienda.html';
 }

@@ -18,7 +18,16 @@ public class RepartidorController {
 
     @RequestMapping(value = "api/buscarRepartidorDisponible", method = RequestMethod.POST)
     public Repartidor agregarPedidoRepartidor(){
-        List<Repartidor> repDisponible = repartidorDao.agregarPedidoRepartidor();
-        return repDisponible.get(0);
+        List<Repartidor> repartidoresLista = repartidorDao.agregarPedidoRepartidor();
+
+        for (int i = 0; i < repartidoresLista.size(); i++) {
+            List<Pedido> listaPedidos = repartidorDao.cantidadPedPep(repartidoresLista.get(i).getNombreRep());
+            if (listaPedidos.size() < 20 || listaPedidos.isEmpty() || listaPedidos == null) {
+                return repartidoresLista.get(i);
+            }
+        }
+        return null;
     }
+
+
 }

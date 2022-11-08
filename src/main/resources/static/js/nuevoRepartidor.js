@@ -14,11 +14,12 @@ async function registrarRepartidor() {
 
     let nombreRepartidor = document.getElementById('txtNombre').value;
     let apellidoRepartidor = document.getElementById('txtApellido').value;
-    let nombreApellidoRepartidor = nombreRepartidor + ' ' + apellidoRepartidor;
-
-    datosRepartidor.nombreRep = nombreApellidoRepartidor;
+    datosRepartidor.nombreRep = nombreRepartidor + ' ' + apellidoRepartidor;
     datosRepartidor.disponibleRep = true;
     datosRepartidor.estadoRep = true;
+    datosRepartidor.capacidadRep = 20;
+
+    console.log('Repartidor ', datosRepartidor);
 
     datosCuenta.nombreUsuario = document.getElementById('txtNomUser').value;
     datosCuenta.rol = 'Repartidor';
@@ -42,4 +43,7 @@ async function registrarRepartidor() {
         },
         body: JSON.stringify(datosCuenta)
     });
+
+    alert('Repartidor agregado');
+    window.location.href = "menuAdmin.html";
 }

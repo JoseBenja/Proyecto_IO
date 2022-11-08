@@ -2,6 +2,7 @@ package umg.proyectoio.dao;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import umg.proyectoio.models.Pedido;
 import umg.proyectoio.models.Repartidor;
 
 import javax.persistence.EntityManager;
@@ -15,9 +16,18 @@ public class RepartidorDaoImp implements RepartidorDao{
     @PersistenceContext
     EntityManager entityManager;
 
+    @Override
     public List<Repartidor> agregarPedidoRepartidor() {
-        String query = "FROM Repartidor WHERE disponible=true AND estado_rep=true";
+        String query = "FROM Repartidor WHERE estado_rep=true";
 
         return entityManager.createQuery(query).getResultList();
     }
+
+    @Override
+    public List<Pedido> cantidadPedPep(String nombreRep) {
+        String query = "FROM Pedido WHERE nom_rep='" + nombreRep + "' AND estado_ped=true";
+
+        return entityManager.createQuery(query).getResultList();
+    }
+
 }

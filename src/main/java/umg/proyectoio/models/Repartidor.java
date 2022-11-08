@@ -21,4 +21,7 @@ public class Repartidor {
 
     @Getter @Setter @Column(name = "estado_rep")
     private boolean estadoRep;
+
+    @Getter @Setter @Column(name = "capacidad")
+    private int capacidadRep;
 }
