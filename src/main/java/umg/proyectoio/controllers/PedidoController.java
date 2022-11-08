@@ -21,8 +21,8 @@ public class PedidoController {
         pedidoDao.agregarPedido(pedido);
     }
 
-    @RequestMapping(value = "api/listaPedidos", method = RequestMethod.POST)
-    public List<Pedido> buscarPedidoLista(@RequestBody Pedido pedido){
+    @RequestMapping(value = "api/listaPedidosRepartidorEsp", method = RequestMethod.POST)
+    public List<Pedido> buscarPedidoListaRepEsp(@RequestBody Pedido pedido){
         return pedidoDao.obtenerBusqueda(pedido);
     }
 
@@ -31,20 +31,8 @@ public class PedidoController {
         return pedidoDao.obtenerpedidoEspecificoRuta(pedido);
     }
 
-    /*public void Solver(String[] args) {
-        double a = Double.parseDouble(args[0]);
-        double b = Double.parseDouble(args[1]);
-        double c = Double.parseDouble(args[2]);
-        double d = Double.parseDouble(args[3]);
-
-        // solution metodo 1
-        double y1 = (d - c/a) / (b - 1/a);
-        double x1 = (c - y1) / a;
-        StdOut.println(x1 + ", " + y1);
-
-        // solution metodo 2
-        double y2 = (c - a*d) / (1 - a*b);
-        double x2 = d - b*y2;
-        StdOut.println(x2 + ", " + y2);
-    }*/
+    @RequestMapping(value = "api/listaPedidos", method = RequestMethod.POST)
+    public List<Pedido> buscarPedidoLista(@RequestBody Pedido pedido){
+        return pedidoDao.listaPedidos(pedido);
+    }
 }

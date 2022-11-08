@@ -16,7 +16,7 @@ public class PedidoDaoImp implements PedidoDao{
 
     @Override
     public List<Pedido> obtenerBusqueda(Pedido pedido) {
-        String query = "FROM Pedido WHERE estado_ped=" + pedido.isEstadoPedido() + " AND cantidad_ped > 0";
+        String query = "FROM Pedido WHERE nom_rep='" + pedido.getNombreRepartidor() + "' AND estado_ped=" + pedido.isEstadoPedido() + " AND cantidad_ped > 0";
         return entityManager.createQuery(query).getResultList();
     }
 
@@ -29,5 +29,11 @@ public class PedidoDaoImp implements PedidoDao{
     @Override
     public void agregarPedido(Pedido pedido) {
         entityManager.merge(pedido);
+    }
+
+    @Override
+    public List<Pedido> listaPedidos(Pedido pedido) {
+        String query = "FROM Pedido WHERE estado_ped=" + pedido.isEstadoPedido() + " AND cantidad_ped > 0";
+        return entityManager.createQuery(query).getResultList();
     }
 }

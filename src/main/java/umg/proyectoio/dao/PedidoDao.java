@@ -9,6 +9,8 @@ public interface PedidoDao {
 
     List<Pedido> obtenerpedidoEspecificoRuta(Pedido pedido);
 
+    List<Pedido> listaPedidos(Pedido pedido);
+
     void agregarPedido(Pedido pedido);
 
 }

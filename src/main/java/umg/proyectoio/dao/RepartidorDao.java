@@ -9,4 +9,6 @@ public interface RepartidorDao {
     List<Repartidor> agregarPedidoRepartidor();
 
     List<Pedido> cantidadPedPep(String nombreRep);
+
+    List<Repartidor> filtroUsuarioLista(Repartidor repartidor);
 }

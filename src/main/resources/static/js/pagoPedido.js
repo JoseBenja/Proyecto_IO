@@ -15,6 +15,8 @@ async function pagoPedido() {
     });
     let resultadoBusqueda = await request.json()
 
+    console.log("Resultado repartidor ", resultadoBusqueda);
+
     datos.dirPedido = document.getElementById('txtDireccion').value;
     datos.nombreRepartidor = resultadoBusqueda.nombreRep;
     datos.nitClientePedido = document.getElementById('txtNIT').value;

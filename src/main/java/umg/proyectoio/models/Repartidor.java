@@ -16,12 +16,12 @@ public class Repartidor {
     @Getter @Setter @Column(name = "nom_rep")
     private String nombreRep;
 
-    @Getter @Setter @Column(name = "disponible")
-    private boolean disponibleRep;
-
     @Getter @Setter @Column(name = "estado_rep")
     private boolean estadoRep;
 
     @Getter @Setter @Column(name = "capacidad")
     private int capacidadRep;
+
+    @Getter @Setter @Column(name = "nombre_usuario")
+    private String nombreUsuarioRep;
 }

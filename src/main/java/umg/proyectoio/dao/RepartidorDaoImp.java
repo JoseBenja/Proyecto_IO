@@ -30,4 +30,10 @@ public class RepartidorDaoImp implements RepartidorDao{
         return entityManager.createQuery(query).getResultList();
     }
 
+    @Override
+    public List<Repartidor> filtroUsuarioLista(Repartidor repartidor) {
+        String query = "FROM Repartidor WHERE nombre_usuario='" + repartidor.getNombreUsuarioRep() + "' AND estado_rep=true";
+
+        return entityManager.createQuery(query).getResultList();
+    }
 }

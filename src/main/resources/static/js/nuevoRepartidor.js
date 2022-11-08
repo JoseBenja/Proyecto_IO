@@ -18,8 +18,7 @@ async function registrarRepartidor() {
     datosRepartidor.disponibleRep = true;
     datosRepartidor.estadoRep = true;
     datosRepartidor.capacidadRep = 20;
-
-    console.log('Repartidor ', datosRepartidor);
+    datosRepartidor.nombreUsuarioRep = document.getElementById('txtNomUser').value;
 
     datosCuenta.nombreUsuario = document.getElementById('txtNomUser').value;
     datosCuenta.rol = 'Repartidor';

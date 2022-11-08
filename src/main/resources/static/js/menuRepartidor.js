@@ -13,9 +13,30 @@ function verificarToken() {
 async function busquedaSolicitud() {
     let datos = {};
 
+    let datosUsuarioLista = {};
+    datosUsuarioLista.nombreUsuarioRep = localStorage.usuario;
+
+    console.log('Ussername ', datosUsuarioLista);
+
+    //RepartidorController
+    const usuarioListaPermiso = await fetch('api/filtroUsuarioLista', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datosUsuarioLista)
+    });
+    const resultadousuarioListaPermiso = await usuarioListaPermiso.json()
+
+    datos.nombreRepartidor = resultadousuarioListaPermiso.nombreRep;
     datos.estadoPedido = true;
 
-    const request = await fetch('api/listaPedidos', {
+    console.log('Resultado Lsta ', resultadousuarioListaPermiso);
+    console.log('datos ', datos)
+
+    //PedidoController
+    const request = await fetch('api/listaPedidosRepartidorEsp', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
