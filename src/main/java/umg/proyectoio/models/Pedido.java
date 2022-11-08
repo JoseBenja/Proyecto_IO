@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name="detalle_pedido")
@@ -27,6 +28,9 @@ public class Pedido {
 
     @Getter @Setter @Column(name = "correo_cliente_ped")
     private String correoClientePedido;
+
+    @Getter @Setter @Column(name = "fecha_ped")
+    private Date fechaPedido;
 
     @Getter @Setter @Column(name = "estado_ped")
     private boolean estadoPedido;
