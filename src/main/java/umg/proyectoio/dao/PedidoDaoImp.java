@@ -16,7 +16,7 @@ public class PedidoDaoImp implements PedidoDao{
 
     @Override
     public List<Pedido> obtenerBusqueda(Pedido pedido) {
-        String query = "FROM Pedido WHERE estado_ped=" + pedido.isEstadoPedido();
+        String query = "FROM Pedido WHERE estado_ped=" + pedido.isEstadoPedido() + " AND cantidad_ped > 0";
         return entityManager.createQuery(query).getResultList();
     }
 

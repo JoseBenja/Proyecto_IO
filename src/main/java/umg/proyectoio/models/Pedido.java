@@ -31,5 +31,8 @@ public class Pedido {
     @Getter @Setter @Column(name = "estado_ped")
     private boolean estadoPedido;
 
+    @Getter @Setter @Column(name = "cantidad_ped")
+    private int cantidadPedido;
+
 }
 

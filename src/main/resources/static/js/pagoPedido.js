@@ -21,6 +21,7 @@ async function pagoPedido() {
     datos.dirPedidoEspecifico = document.getElementById("txtDirEspecifica").value;
     datos.correoClientePedido = document.getElementById('txtEmail').value;
     datos.estadoPedido = true;
+    datos.cantidadPedido = parseInt(localStorage.prodComprados);
 
     await fetch('api/pedido', {
         method: 'POST',

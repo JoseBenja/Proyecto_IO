@@ -8,6 +8,8 @@ async function busquedaProducto() {
 
     datos.estadoShoplist = true;
 
+    let productosComprados = 0;
+
     const request = await fetch('api/listarShopList', {
         method: 'POST',
         headers: {
@@ -28,7 +30,11 @@ async function busquedaProducto() {
         resultadoBusquedaHtml += resultadoHtml;
 
         sumaTotal += resultado.precioProducto;
+
+        productosComprados++;
     }
+
+    localStorage.prodComprados = productosComprados;
 
     document.querySelector('#cantidadTotalPagar').outerHTML = 'Total a pagar: Q ' +sumaTotal.toString();
 
