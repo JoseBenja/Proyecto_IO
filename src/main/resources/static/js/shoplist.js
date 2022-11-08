@@ -4,7 +4,6 @@ $(document).ready(function() {
 
 async function busquedaProducto() {
     let datos = {};
-    let totalPagar = document.getElementById("cantidadTotalPagar");
     let sumaTotal = 0;
 
     datos.estadoShoplist = true;

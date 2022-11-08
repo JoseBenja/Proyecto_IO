@@ -34,7 +34,3 @@ async function pagoPedido() {
     alert('Compra realizada con exito')
     window.location.href = 'shoplist.html';
 }
-
-async function costoPedido() {
-
-}
