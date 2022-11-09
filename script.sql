@@ -19,7 +19,7 @@ CREATE TABLE repartidor (
                             	nom_rep varchar(50),
                             	estado_rep boolean,
                             	capacidad int,
-			    	nombre_usuario
+			    	            nombre_usuario varchar(100)
 );
 
 CREATE TABLE detalle_producto (
@@ -37,9 +37,9 @@ CREATE TABLE detalle_pedido (
                                 dir_esp_ped varchar(150),
                                 nit_cliente_ped varchar(20),
                                 correo_cliente_ped varchar(100),
-				fecha_ped date,                                
-				estado_ped boolean,
-				cantidad_ped int
+				                fecha_ped date,
+				                estado_ped boolean,
+				                cantidad_ped int
 );
 
 CREATE TABLE producto_shoplist (
