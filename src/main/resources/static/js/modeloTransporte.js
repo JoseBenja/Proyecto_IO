@@ -72,9 +72,9 @@ let fuentes = 1;
 }*/
 
 function generaTabla() {
-    var destinos = parseInt(document.getElementById('col').value);
-    var lol = document.getElementById("tabla")
-    var body = document.getElementsByTagName("body")[0];
+    let destinos = parseInt(document.getElementById('col').value);
+    let lol = document.getElementById("tabla");
+    let body = document.getElementsByTagName("body")[0];
     var d = 1;
     if (lol) {
         lol.parentNode.removeChild(lol);
