@@ -15,11 +15,11 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE repartidor (
-                            id_rep serial primary key,
-                            nom_rep varchar(50),
-                            disponible boolean,
-                            estado_rep boolean,
-                            capacidad int
+                            	id_rep serial primary key,
+                            	nom_rep varchar(50),
+                            	estado_rep boolean,
+                            	capacidad int,
+			    	nombre_usuario
 );
 
 CREATE TABLE detalle_producto (
@@ -37,7 +37,9 @@ CREATE TABLE detalle_pedido (
                                 dir_esp_ped varchar(150),
                                 nit_cliente_ped varchar(20),
                                 correo_cliente_ped varchar(100),
-                                estado_ped boolean
+				fecha_ped date,                                
+				estado_ped boolean,
+				cantidad_ped int
 );
 
 CREATE TABLE producto_shoplist (
@@ -46,8 +48,6 @@ CREATE TABLE producto_shoplist (
                                    precio_prod float,
                                    estado_shoplist boolean
 );
-
-insert into usuario (nom_user, rol_user, pass_user, estado_user) values ('Admin', 'Administrador', 'admin123', true);
 
 --TRIGGERS
 CREATE TABLE bitacora_producto_pedido (
