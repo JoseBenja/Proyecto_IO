@@ -30,7 +30,7 @@ public class UsuarioDaoImp implements UsuarioDao{
 
     @Override
     public Usuario obtenerUsuarioPorCredencial(Usuario usuario) {
-        String query = "FROM Usuario WHERE nom_user= :nombreUsuario";
+        String query = "FROM Usuario WHERE nom_user= :nombreUsuario AND estado_user=true ";
         List<Usuario> lista = entityManager.createQuery(query)
                 .setParameter("nombreUsuario", usuario.getNombreUsuario())
                 .getResultList();

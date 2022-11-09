@@ -71,7 +71,7 @@ CREATE OR REPLACE FUNCTION funcion_bitacora_prod_ped()
 AS
 $$
 BEGIN
-    INSERT INTO bitacora_producto_pedido(usuario,fecha,id_prod,nom_prod_B,nom_prod_A,desc_prod_B,desc_prod_A,precio_prod_B,desc_prod_A,estado_prod_B,estado_prod_A)
+    INSERT INTO bitacora_producto_pedido(usuario,fecha,id_prod,nom_prod_B,nom_prod_A,desc_prod_B,desc_prod_A,precio_prod_B,precio_prod_a,estado_prod_B,estado_prod_A)
     VALUES(user, now(), old.id_prod, old.nom_prod , new.nom_prod, old.desc_prod, new.desc_prod, old.precio_prod, new.precio_prod, old.estado_prod, new.estado_prod);
     RETURN NEW;
 END;

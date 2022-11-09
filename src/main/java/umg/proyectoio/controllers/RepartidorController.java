@@ -35,4 +35,14 @@ public class RepartidorController {
         List<Repartidor> repartidorList = repartidorDao.filtroUsuarioLista(repartidor);
         return repartidorList.get(0);
     }
+
+    @RequestMapping(value = "api/eliminarRepartidor", method = RequestMethod.POST)
+    public void eliminarRepartidor(@RequestBody Repartidor repartidor) {
+        repartidorDao.eliminarRepartidor(repartidor);
+    }
+
+    @RequestMapping(value = "api/listarRepartidores", method = RequestMethod.POST)
+    public List<Repartidor> listarRepartidores(Repartidor repartidor) {
+        return repartidorDao.listarRepartidores(repartidor);
+    }
 }

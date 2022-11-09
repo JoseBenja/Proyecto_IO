@@ -50,4 +50,10 @@ public class ProductoDaoImp implements ProductoDao{
         Query query = entityManager.createQuery("delete from ShopList where estado_shoplist=true");
         query.executeUpdate();
     }
+
+    @Override
+    public void eliminarProducto(Producto producto) {
+        Query query = entityManager.createQuery("update Producto set estado_prod=false where id_prod=" + producto.getIdProducto());
+        query.executeUpdate();
+    }
 }

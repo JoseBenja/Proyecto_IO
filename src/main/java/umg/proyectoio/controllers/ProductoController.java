@@ -50,4 +50,9 @@ public class ProductoController {
         productoDao.eliminarShopListCompleta();
     }
 
+    //Consume API de menuProductoAdmin.js que eliminar productos
+    @RequestMapping(value = "api/eliminarProducto", method = RequestMethod.POST)
+    public void eliminarProducto(@RequestBody Producto producto) {
+        productoDao.eliminarProducto(producto);
+    }
 }

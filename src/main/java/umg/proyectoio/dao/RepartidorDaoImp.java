@@ -7,6 +7,7 @@ import umg.proyectoio.models.Repartidor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -35,5 +36,23 @@ public class RepartidorDaoImp implements RepartidorDao{
         String query = "FROM Repartidor WHERE nombre_usuario='" + repartidor.getNombreUsuarioRep() + "' AND estado_rep=true";
 
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public List<Repartidor> listarRepartidores(Repartidor repartidor) {
+        String query = "FROM Repartidor WHERE estado_rep=true";
+
+        return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public void eliminarRepartidor(Repartidor repartidor) {
+        //Elimina en la tabla repartidor
+        Query query = entityManager.createQuery("update Repartidor set estado_rep=false where nombre_usuario='" + repartidor.getNombreUsuarioRep() + "'");
+        query.executeUpdate();
+
+        //Elimina en la tabla usuario
+        Query query2 = entityManager.createQuery("update Usuario set estado_user=false where nom_user='" + repartidor.getNombreUsuarioRep() + "'");
+        query2.executeUpdate();
     }
 }

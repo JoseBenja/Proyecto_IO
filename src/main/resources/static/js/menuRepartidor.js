@@ -32,9 +32,6 @@ async function busquedaSolicitud() {
     datos.nombreRepartidor = resultadousuarioListaPermiso.nombreRep;
     datos.estadoPedido = true;
 
-    console.log('Resultado Lsta ', resultadousuarioListaPermiso);
-    console.log('datos ', datos)
-
     //PedidoController
     const request = await fetch('api/listaPedidosRepartidorEsp', {
         method: 'POST',
