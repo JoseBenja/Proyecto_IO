@@ -13,6 +13,8 @@ function verificarToken() {
 async function busquedaRepartidorAdmin() {
     let datos = {};
 
+    console.log("Rol ", localStorage.rol);
+
     datos.estadoRep = true;
 
     const request = await fetch('api/listarRepartidores', {

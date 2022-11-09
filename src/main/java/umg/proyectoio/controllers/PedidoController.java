@@ -35,4 +35,14 @@ public class PedidoController {
     public List<Pedido> buscarPedidoLista(@RequestBody Pedido pedido){
         return pedidoDao.listaPedidos(pedido);
     }
+
+    @RequestMapping(value = "api/eliminarPedido", method = RequestMethod.POST)
+    public void eliminarPedido(@RequestBody Pedido pedido) {
+        pedidoDao.eliminarPedido(pedido);
+    }
+
+    @RequestMapping(value = "api/habilitarPedido", method = RequestMethod.POST)
+    public void habilitarPedido(@RequestBody Pedido pedido) {
+        pedidoDao.habilitarPedido(pedido);
+    }
 }

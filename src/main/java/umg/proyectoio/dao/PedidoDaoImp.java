@@ -3,9 +3,11 @@ package umg.proyectoio.dao;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import umg.proyectoio.models.Pedido;
+import umg.proyectoio.models.Producto;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -35,5 +37,17 @@ public class PedidoDaoImp implements PedidoDao{
     public List<Pedido> listaPedidos(Pedido pedido) {
         String query = "FROM Pedido WHERE cantidad_ped > 0";
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public void eliminarPedido(Pedido pedido) {
+        Query query = entityManager.createQuery("update Pedido set estado_ped=false where id_ped=" + pedido.getIdPedido());
+        query.executeUpdate();
+    }
+
+    @Override
+    public void habilitarPedido(Pedido pedido) {
+        Query query = entityManager.createQuery("update Pedido set estado_ped=true where id_ped=" + pedido.getIdPedido());
+        query.executeUpdate();
     }
 }

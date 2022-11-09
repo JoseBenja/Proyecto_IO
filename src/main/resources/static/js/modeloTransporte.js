@@ -1,4 +1,14 @@
+$(document).ready(function() {
+    verificarToken();
+});
 
+function verificarToken() {
+    if (localStorage.token == null && localStorage.usuario !== 'Administrador') {
+        window.location.href = '401.html'
+    } else {
+        generaTabla();
+    }
+}
 
 let fuentes = 1;
 

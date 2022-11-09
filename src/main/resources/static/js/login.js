@@ -32,8 +32,10 @@ async function iniciarSesion() {
 
         if(respuestaRol == 'Administrador') {
             window.location.href = 'menuAdmin.html'
+            localStorage.rol = datos.rol;
         } else if(respuestaRol == 'Repartidor'){
             window.location.href = 'menuRepartidor.html'
+            localStorage.rol = datos.rol;
             busquedaSolicitud();
         } else {
             alert("El usuario ingresado no tiene acceso a una cuenta")

@@ -50,7 +50,8 @@ async function busquedaSolicitud() {
         let resultadoHtml = '<tr><td>' + resultado.nitClientePedido
             + '</td><td>' + resultado.idPedido
             + '</td><td> <a class="btn btn-info btn-lg" href="rutaPedido.html" onclick="localIdPed(`' + resultado.idPedido + '`)">Ver Ruta</a>'
-            + '</td><td>' + resultado.estadoPedido;
+            + '</td><td>' + resultado.estadoPedido
+            + '</td><td> <a class="btn btn-lg btn-block btn btn-info" onclick="eliminarPedido(`' + resultado.idPedido + '`)">Entregado</a>';
         resultadoBusquedaHtml += resultadoHtml;
     }
 
@@ -60,6 +61,24 @@ async function busquedaSolicitud() {
 
 async function localIdPed(idPed) {
     localStorage.idPedido = idPed;
+}
+
+async function eliminarPedido(idPed) {
+    let datos = {};
+
+    datos.idPedido = idPed;
+
+    await fetch('api/eliminarPedido', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datos)
+    });
+
+    alert('Pedido entregado')
+    window.location.href = "menuRepartidor.html";
 }
 
 

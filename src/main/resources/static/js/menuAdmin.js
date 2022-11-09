@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function verificarToken() {
-    if (localStorage.token == null) {
+    if (localStorage.token == null && localStorage.rol !== 'Administrador') {
         window.location.href = '401.html'
     }
 }
