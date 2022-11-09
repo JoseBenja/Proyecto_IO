@@ -23,7 +23,7 @@ public class RepartidorController {
 
         for (int i = 0; i < repartidoresLista.size(); i++) {
             List<Pedido> listaPedidos = repartidorDao.cantidadPedPep(repartidoresLista.get(i).getNombreRep());
-            if (listaPedidos.size() < 20 || !listaPedidos.isEmpty() || listaPedidos != null) {
+            if (listaPedidos.size() < 7 ) {
                 return repartidoresLista.get(i);
             }
         }

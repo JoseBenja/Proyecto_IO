@@ -35,6 +35,14 @@ async function pagoPedido() {
         body: JSON.stringify(datos)
     });
 
+    await fetch('api/eliminarShopListCompleta', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    });
+
     alert('Compra realizada con exito')
     window.location.href = 'menuTienda.html';
 }

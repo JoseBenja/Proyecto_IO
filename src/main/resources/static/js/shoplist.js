@@ -48,6 +48,7 @@ async function eliminarShopList(idProd) {
 
     console.log('Datos ', datos2);
 
+    //Producto Controller
     await fetch('api/eliminarShopList', {
         method: 'POST',
         headers: {

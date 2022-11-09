@@ -44,4 +44,10 @@ public class ProductoController {
     public void eliminarShopList(@RequestBody ShopList shopList){
         productoDao.eliminarShopList(shopList);
     }
+
+    @RequestMapping(value = "api/eliminarShopListCompleta", method = RequestMethod.POST)
+    public void eliminarShopListCompleta() {
+        productoDao.eliminarShopListCompleta();
+    }
+
 }

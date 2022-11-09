@@ -7,6 +7,8 @@ import umg.proyectoio.models.ShopList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -41,5 +43,11 @@ public class ProductoDaoImp implements ProductoDao{
     @Override
     public void eliminarShopList(ShopList shopList) {
         entityManager.remove(entityManager.contains(shopList) ? shopList: entityManager.merge(shopList));
+    }
+
+    @Override
+    public void eliminarShopListCompleta() {
+        Query query = entityManager.createQuery("delete from ShopList where estado_shoplist=true");
+        query.executeUpdate();
     }
 }
