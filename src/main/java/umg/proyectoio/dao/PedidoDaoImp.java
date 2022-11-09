@@ -33,7 +33,7 @@ public class PedidoDaoImp implements PedidoDao{
 
     @Override
     public List<Pedido> listaPedidos(Pedido pedido) {
-        String query = "FROM Pedido WHERE estado_ped=" + pedido.isEstadoPedido() + " AND cantidad_ped > 0";
+        String query = "FROM Pedido WHERE cantidad_ped > 0";
         return entityManager.createQuery(query).getResultList();
     }
 }
